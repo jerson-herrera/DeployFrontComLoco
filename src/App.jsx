@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Register from './components/Register'; // Simulación de registro
 import Dashboard from './components/Dashboard'; // Simulación de dashboard
 import { AuthProvider } from './contexto/AuthContext.jsx'; // Asegúrate de la ruta
-import { DashboardAdmin } from './components/DashboardAdmin.jsx';
+import  DashboardAdmin  from './components/DashboardAdmin.jsx';
 
 function App() {
   return (

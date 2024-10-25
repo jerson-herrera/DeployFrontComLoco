@@ -1,18 +1,16 @@
-// Login.js
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../contexto/AuthContext'; // Asegúrate de que la ruta sea correcta
-import "../css/Login.css"; // Asegúrate de que la ruta sea correcta
+import { AuthContext } from '../contexto/AuthContext';
+import "../css/Login.css";
 
 const Login = () => {
   const { login } = useContext(AuthContext); // Usa la función login del contexto
   const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Hook para navegar entre rutas
+  const navigate = useNavigate(); // Hook para navegación
 
-  // Maneja el cambio en los campos del formulario
   const handleChangeUsuario = (e) => setUsuario(e.target.value);
   const handleChangePassword = (e) => setPassword(e.target.value);
 
@@ -25,20 +23,27 @@ const Login = () => {
         Password: password,
       });
 
-      // Almacenar el token en el contexto usando la función login
-      login(response.data.token); // Suponiendo que el token está en response.data.token
+      const { token, role } = response.data;
 
-      // Si la autenticación es exitosa, redirigir a dashboard o página de inicio
-      navigate('/dashboard'); // Reemplaza con la ruta deseada
+      // Almacenar el token usando la función login del contexto
+      login(token);
+
+      // Redirige al dashboard correspondiente según el rol
+      if (role === 'admin') {
+        navigate('/dashboardAdmin');
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) {
       console.error(error);
-      setError('Credenciales incorrectas. Inténtalo de nuevo.');
+      setError(
+        error.response?.data?.error || 'Error al iniciar sesión. Inténtalo de nuevo.'
+      );
     }
   };
 
-  // Función para manejar registro
   const handleRegister = () => {
-    navigate('/register'); // Navega a la ruta de registro
+    navigate('/register');
   };
 
   return (
