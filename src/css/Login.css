@@ -1,0 +1,57 @@
+/* Estilo para el contenedor principal */
+.container {
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f9f9f9; /* Fondo claro */
+}
+
+/* Estilo para el encabezado */
+h2 {
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilo para el formulario */
+.form {
+    display: flex; /* Flexbox para alinear los elementos */
+    flex-direction: column; /* Columna de elementos */
+}
+
+/* Estilo para los campos de entrada */
+.input {
+    margin-bottom: 15px; /* Margen inferior entre campos */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 3px; /* Bordes redondeados */
+}
+
+/* Estilo para el mensaje de error */
+.error {
+    color: red; /* Color rojo para errores */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Estilo para los botones */
+.buttons {
+    display: flex; /* Flexbox para alinear botones */
+    justify-content: space-between; /* Espacio entre botones */
+}
+
+.button {
+    padding: 10px 15px; /* Espacio interno de los botones */
+    border: none; /* Sin borde */
+    border-radius: 3px; /* Bordes redondeados */
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cursor tipo puntero al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para hover */
+}
+
+/* Estilo para el efecto hover en botones */
+.button:hover {
+    background-color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+}

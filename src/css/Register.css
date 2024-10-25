@@ -1,0 +1,90 @@
+/* Estilo general para el contenedor */
+div {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    padding: 20px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    background-color: #f9f9f9; /* Color de fondo suave */
+  }
+  
+  /* Estilo del título */
+  h2 {
+    text-align: center; /* Centra el título */
+    color: #333; /* Color del texto */
+  }
+  
+  /* Estilo de los formularios */
+  form div {
+    margin-bottom: 15px; /* Espacio entre campos */
+  }
+  
+  /* Estilo de las etiquetas */
+  label {
+    display: block; /* Hace que las etiquetas ocupen todo el ancho */
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+    font-weight: bold; /* Negrita */
+  }
+  
+  /* Estilo de los inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+  }
+  
+  /* Estilo del botón de registro */
+  button[type="submit"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #28a745; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #218838; /* Color de fondo más oscuro en hover */
+  }
+  
+  /* Estilo del botón de volver */
+  button {
+    margin-top: 10px; /* Espacio superior */
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #007bff; /* Borde azul */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: white; /* Fondo blanco */
+    color: #007bff; /* Texto azul */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+  }
+  
+  button:hover {
+    background-color: #007bff; /* Fondo azul en hover */
+    color: white; /* Texto blanco en hover */
+  }
+  
+  /* Estilo de mensajes de error y éxito */
+  p {
+    text-align: center; /* Centra el texto */
+    font-size: 16px; /* Tamaño de la fuente */
+  }
+  
+  p[style*="color: red"] {
+    color: red; /* Color rojo para errores */
+  }
+  
+  p[style*="color: green"] {
+    color: green; /* Color verde para éxitos */
+  }
+  
