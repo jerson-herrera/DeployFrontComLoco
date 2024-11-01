@@ -41,45 +41,49 @@ const Dashboard = () => {
     };
 
     const handleRegistrarCodigo = async () => {
-      const codigoNum = parseInt(codigo, 10);
-  
-      if (codigoNum < 1 || codigoNum > 1000) {
-          setError('El código debe estar entre 0001 y 1000');
-          return;
-      }
-  
-      try {
-          const response = await axios.post(
-              'http://localhost:3003/intentos/createIntento',
-              { codigo },
-              {
-                  headers: {
-                      Authorization: `Bearer ${token}`,
-                  },
-              }
-          );
-  
-          const nuevoRegistro = {
-              fecha: new Date().toLocaleString(),
-              codigo: response.data.nuevoIntento.codigo,
-              premio: response.data.premio || 'Sin premio', // Este debe reflejar el premio correctamente
-          };
-  
-          // Solo agregar el nuevo registro si tiene un premio
-          if (nuevoRegistro.premio) {
-              setRegistros(prev => [...prev, nuevoRegistro]);
-          }
-  
-          setSuccess('Código registrado exitosamente!');
-          setError(null);
-          setCodigo('');
-      } catch (err) {
-          console.error(err);
-          setError('Error al registrar el código: ' + (err.response?.data?.error || err.message));
-          setSuccess(null);
-      }
-  };
-  
+        const codigoNum = parseInt(codigo, 10);
+
+        if (codigoNum < 1 || codigoNum > 1000) {
+            setError('El código debe estar entre 0001 y 1000');
+            return;
+        }
+
+        try {
+            const response = await axios.post(
+                'http://localhost:3003/intentos/createIntento',
+                { codigo },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+
+            const premio = response.data.premio;
+            const mensaje = response.data.mensaje;
+
+            const nuevoRegistro = {
+                fecha: new Date().toLocaleString(),
+                codigo: response.data.nuevoIntento.codigo,
+                premio: premio || 'Sin premio',
+            };
+
+            // Actualiza el mensaje de éxito según el premio
+            setSuccess(mensaje);
+
+            // Agrega el registro solo si tiene premio
+            if (premio) {
+                setRegistros(prev => [...prev, nuevoRegistro]);
+            }
+
+            setError(null);
+            setCodigo('');
+        } catch (err) {
+            console.error(err);
+            setError('Error al registrar el código: ' + (err.response?.data?.error || err.message));
+            setSuccess(null);
+        }
+    };
 
     const handleSalir = () => {
         navigate('/'); // Redirige al login
@@ -101,7 +105,7 @@ const Dashboard = () => {
             </div>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {success && <p style={{ color: 'green' }}>{success}</p>}
-            <h3>Registros de Códigos con Premio</h3>
+            <h3>Registro de tus códigos con premio</h3>
             <table>
                 <thead>
                     <tr>

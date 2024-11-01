@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate
-import "../css/Register.css"
+import "../css/Register.css";
 
 const Register = () => {
   const navigate = useNavigate(); // Inicializa useNavigate
@@ -16,7 +16,6 @@ const Register = () => {
   });
 
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,11 +27,24 @@ const Register = () => {
     console.log("Datos enviados:", formData); // Añade esto para depuración
     try {
       const response = await axios.post('http://localhost:3003/users/createUser', formData);
-      setSuccess('Registro exitoso!');
+      
+      // Mostrar mensaje de éxito como alerta
+      window.alert('Registro exitoso!');
+
+      // Reiniciar el formulario a valores vacíos
+      setFormData({
+        Nombre: '',
+        FechaNacimiento: '',
+        Cedula: '',
+        Correo: '',
+        Celular: '',
+        Ciudad: '',
+        Password: '',
+      });
+
       setError(null);
     } catch (err) {
       setError('Error en el registro: ' + (err.response?.data?.message || err.message));
-      setSuccess(null);
     }
   };
 
@@ -118,11 +130,9 @@ const Register = () => {
         <button type="submit">Registrar</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {success && <p style={{ color: 'green' }}>{success}</p>}
       <button onClick={handleBackToLogin}>Volver a Login</button> {/* Botón para volver a login */}
     </div>
   );
 };
 
 export default Register;
-

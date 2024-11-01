@@ -52,12 +52,12 @@ const DashboardAdmin = () => {
                     </thead>
                     <tbody>
                         {ganadores.map((ganador) => (
-                            <tr key={ganador._id}>
+                            <tr key={ganador.CodigoGanador}>
                                 <td>{new Date(ganador.FechaUso).toLocaleDateString()}</td>
-                                <td>{ganador.usuario?.Nombre}</td>
-                                <td>{ganador.usuario?.Cedula}</td>
-                                <td>{ganador.usuario?.Celular}</td>
-                                <td>{ganador.Codigo}</td>
+                                <td>{ganador.Nombre}</td>
+                                <td>{ganador.Cedula}</td>
+                                <td>{ganador.Celular}</td>
+                                <td>{ganador.CodigoGanador}</td>
                                 <td>{ganador.Premio}</td>
                             </tr>
                         ))}

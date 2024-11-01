@@ -48,7 +48,7 @@ const Login = () => {
 
   return (
     <div className="container">
-      <h2>Iniciar Sesión</h2>
+      {/* <h2>Iniciar Sesión</h2> */}
       <form onSubmit={handleLogin} className="form">
         <input
           type="text"
