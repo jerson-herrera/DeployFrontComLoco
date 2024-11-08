@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexto/AuthContext';
 
+
 const Dashboard = () => {
     const navigate = useNavigate();
     const { token } = useAuth();
@@ -30,7 +31,7 @@ const Dashboard = () => {
     };
 
     useEffect(() => {
-        obtenerIntentos(); // Llama a la función al cargar el componente
+        obtenerIntentos();
     }, []);
 
     const handleCodigoChange = (e) => {

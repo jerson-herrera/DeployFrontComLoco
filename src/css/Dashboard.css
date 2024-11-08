@@ -1,0 +1,94 @@
+/* Dashboard.css */
+
+/* Estilo general del contenedor */
+div {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilos del formulario */
+div > input, div > button {
+    padding: 10px;
+    margin: 10px 5px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+input {
+    width: 200px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera de la tabla */
+thead tr {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Filas alternas para mayor legibilidad */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover en las filas */
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Texto de carga, error y éxito */
+p {
+    text-align: center;
+    color: #666;
+}
+
+/* Estilos de los mensajes de éxito y error */
+p.error {
+    color: red;
+}
+
+p.success {
+    color: green;
+}
+
+/* Mensaje cuando no hay ganadores */
+p.no-ganadores {
+    font-style: italic;
+    color: #999;
+}
