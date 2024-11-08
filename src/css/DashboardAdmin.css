@@ -59,3 +59,6 @@ p.no-ganadores {
     font-style: italic;
     color: #999;
 }
+.logout-button:hover {
+    background-color: red; /* Color de fondo cuando el cursor está sobre el botón */
+}

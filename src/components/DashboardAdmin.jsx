@@ -37,7 +37,7 @@ const DashboardAdmin = () => {
 
     return (
         <div>
-            <h2>Dashboard Admin - Intentos con Premio de Todos los Usuarios</h2>
+            <h2>Usuarios ganadores</h2>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <table>
                 <thead>
@@ -45,9 +45,9 @@ const DashboardAdmin = () => {
                         <th>Fecha</th>
                         <th>Código</th>
                         <th>Premio</th>
-                        <th>Nombre Usuario</th>
-                        <th>Correo Usuario</th>
-                        <th>Celular Usuario</th>
+                        <th>Nombre </th>
+                        <th>Correo </th>
+                        <th>Celular </th>
                     </tr>
                 </thead>
                 <tbody>
